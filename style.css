@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow: hidden;
+}
+header {
+    background-color: darkcyan;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-size: large;
+}
+section {
+    height: 500px;
+    background-color:lavender;
+    display: flex;
+}
+footer {
+    height: 100px;
+    background-color: hotpink;
+}
+.start-game {
+    margin: auto;
+    height: 100px;
+    width: 200px;
+    background-color: crimson;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.start-game:hover {
+    background-color: rgb(165, 7, 38);
+}
+.game-container {
+    height: 350px;
+    width: 350px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-template-rows: repeat(3, 110px);
+    background-color: black;
+    gap: 10px
+}
+.spot {
+    background-color: white;
+    text-align: center;
+    font-size: 80px;
+    overflow: none;
+    line-height: 110px;
+}
+.spot:hover {
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+.spot:active {
+    background-color: crimson;
+}
+.spot-taken {
+    background-color: white;
+    text-align: center;
+    font-size: 80px;
+    overflow: none;
+    line-height: 110px;
+    cursor: pointer;
+}

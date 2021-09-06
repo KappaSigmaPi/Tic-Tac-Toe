@@ -40,10 +40,13 @@ const game = ( () => {
         ['','','']
     ];
 
+    let moveCounter = 0;
+
     const move = (spot) => {
         const row = Math.floor(spot/3);
         const column = spot % 3;
         if(board[row][column] == '') {
+            moveCounter++;
             gameBoard.markSpot(spot, onMove);
             board[row][column] = onMove;
             checkForWinner();
@@ -72,8 +75,9 @@ const game = ( () => {
             return (alert(`${onMove} Won!`),restartGame());
         }
         else {
-            return null;
-        }       
+            if(moveCounter == 9) return (alert(`Draw`),restartGame());
+        }
+        return;       
     };
 
     const restartGame = () => {
@@ -84,6 +88,7 @@ const game = ( () => {
         ];
         onMove = 'O';
         gameBoard.drawBoard();
+        moveCounter = 0;
     };
 
     return {checkForWinner, move};
